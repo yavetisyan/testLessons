@@ -105,35 +105,62 @@
 //let a = ["apple", "inlets", "enlists", "google", "banana"];
 //let b = "listen";
 
-let a = [1, 2, 3, 3, 2, 2, 5, 7, 8, 9, 5];
+//let a = ["enlists"];
+//let b = "listens";
 
-function uniqueArr(arr) {
-  let resArr = [];
+//function anagr(arr, findAnagr) {
+//  let res = [];
 
-  if (arr.length > 0) {
-    resArr[0] = arr[0];
-  }
+//  for (let i = 0; i < arr.length; i++) {
+//    let arrFind = [];
+
+//    if (arr[i].length === findAnagr.length) {
+//      for (let j = 0; j < findAnagr.length; j++) {
+//        for (let k = j; k < findAnagr.length; k++) {
+//          if (arr[j][k] === findAnagr[i]) {
+//            res.push(arr[j][k]);
+//          }
+//        }
+//        if (res === arr[i]) {
+//          return res;
+//        }
+//      }
+//    } else {
+//      continue;
+//    }
+//  }
+//}
+
+//debugger;
+//console.log(anagr(a, b));
+
+//let a = ["gogleo"];
+//let b = "google";
+let a = ["apple", "inlets", "enlists", "google", "banana"];
+let b = "listen";
+
+function anagr(arr, findAnagr) {
+  let result = "";
+  let array = [];
 
   for (let i = 0; i < arr.length; i++) {
-    let showRes = false;
+    if (arr[i].length !== findAnagr.length) {
+      continue;
+    }
 
-    for (let j = 0; j < arr.length; j++) {
-      if (arr[i] === resArr[j]) {
-        showRes = true;
-        break;
-      } else {
-        showRes = false;
+    let strArr = "";
+    strArr += arr[i];
+
+    for (let j = 0; j < strArr.length; j++) {
+      result += findAnagr[j];
+
+      if (result === strArr) {
+        continue;
       }
     }
-
-    if (showRes === false) {
-      resArr[resArr.length] = arr[i];
-    }
+    return strArr;
   }
-
-  return resArr;
 }
 
 //debugger;
-
-console.log(uniqueArr(a));
+console.log(anagr(a, b));
