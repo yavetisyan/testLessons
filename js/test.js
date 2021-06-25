@@ -79,33 +79,33 @@ function replaceStr(text, rtext) {
 
 console.log(replaceStr(txt, oldT));
 
-// 2. worked !!!!!
+// 2. worked !!!!!   only sinple word
 
-let a = ["apple", "inlets", "enlists", "google", "banana"];
+let a = ["inlets", "enlists", "google", "banana"];
 let b = "listen";
 
-function anagr(arr, findAnagr) {
-  let result = "";
+function anagr(arr, findeAnagr) {
   let array = [];
+  let result = "";
 
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i].length !== findAnagr.length) {
-      continue;
-    }
-
-    let strArr = "";
-    strArr += arr[i];
-
-    for (let j = 0; j < strArr.length; j++) {
-      result += findAnagr[j];
-
-      if (result === strArr) {
-        continue;
+    for (let j = 0; j < arr[i].length; j++) {
+      if (arr[i].length !== findeAnagr.length) {
+        break;
+      }
+      for (let k = 0; k < findeAnagr.length; k++) {
+        if (arr[i][j] === findeAnagr[k]) {
+          result += findeAnagr[k];
+        }
       }
     }
-    return strArr;
+    if (result === arr[i]) {
+      return arr[i];
+    }
   }
 }
+
+console.log(anagr(a, b));
 
 //debugger;
 console.log(anagr(a, b));
@@ -138,3 +138,36 @@ function anagr(arr, findAnagr) {
 
 debugger;
 console.log(anagr(a, b));
+
+// 4 worked!1
+
+let digit = +prompt("Enter digit arry");
+let a = [];
+
+for (let i = 0; i < digit; i++) {
+  a.push(+prompt("Enter  arrays"));
+}
+
+function uniqElem(arr) {
+  let result = [];
+  let count = 0;
+  let bool = false;
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < result.length; j++) {
+      if (arr[i] === result[j]) {
+        bool = true;
+      }
+    }
+    count++;
+    if (count == 1 && bool == false) {
+      result.push(arr[i]);
+    }
+    bool = false;
+    count = 0;
+  }
+  return result;
+}
+
+debugger;
+console.log(uniqElem(a));

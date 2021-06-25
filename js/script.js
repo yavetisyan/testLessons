@@ -102,65 +102,62 @@
 
 //console.log(arr);
 
-//let a = ["apple", "inlets", "enlists", "google", "banana"];
-//let b = "listen";
+//4
+//let digit = +prompt("Enter digit arry");
+//let a = [];
 
-//let a = ["enlists"];
-//let b = "listens";
-
-//function anagr(arr, findAnagr) {
-//  let res = [];
-
-//  for (let i = 0; i < arr.length; i++) {
-//    let arrFind = [];
-
-//    if (arr[i].length === findAnagr.length) {
-//      for (let j = 0; j < findAnagr.length; j++) {
-//        for (let k = j; k < findAnagr.length; k++) {
-//          if (arr[j][k] === findAnagr[i]) {
-//            res.push(arr[j][k]);
-//          }
-//        }
-//        if (res === arr[i]) {
-//          return res;
-//        }
-//      }
-//    } else {
-//      continue;
-//    }
-//  }
+//for (let i = 0; i < digit; i++) {
+//  a.push(+prompt("Enter  arrays"));
 //}
 
-//debugger;
-//console.log(anagr(a, b));
+//function uniqElem(arr) {
+//  let result = [];
+//  let count = 0;
+//  let bool = false;
 
-//let a = ["gogleo"];
-//let b = "google";
-let a = ["apple", "inlets", "enlists", "google", "banana"];
+//  for (let i = 0; i < arr.length; i++) {
+//    for (let j = 0; j < result.length; j++) {
+//      if (arr[i] === result[j]) {
+//        bool = true;
+//      }
+//    }
+//    count++;
+//    if (count == 1 && bool == false) {
+//      result.push(arr[i]);
+//    }
+//    bool = false;
+//    count = 0;
+//  }
+//  return result;
+//}
+
+////debugger;
+//console.log(uniqElem(a));
+
+//---------------------
+
+let a = ["inlets", "enlists", "google", "banana"];
 let b = "listen";
 
-function anagr(arr, findAnagr) {
-  let result = "";
+function anagr(arr, findeAnagr) {
   let array = [];
+  let result = "";
 
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i].length !== findAnagr.length) {
-      continue;
-    }
-
-    let strArr = "";
-    strArr += arr[i];
-
-    for (let j = 0; j < strArr.length; j++) {
-      result += findAnagr[j];
-
-      if (result === strArr) {
-        continue;
+    for (let j = 0; j < arr[i].length; j++) {
+      if (arr[i].length !== findeAnagr.length) {
+        break;
+      }
+      for (let k = 0; k < findeAnagr.length; k++) {
+        if (arr[i][j] === findeAnagr[k]) {
+          result += findeAnagr[k];
+        }
       }
     }
-    return strArr;
+    if (result === arr[i]) {
+      return arr[i];
+    }
   }
 }
 
-//debugger;
 console.log(anagr(a, b));
