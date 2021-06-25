@@ -1,173 +1,135 @@
-// 1 ---------------------
-function oddEven(arr) {
-  let isOdd = [];
-  let isEven = [];
+// Games
 
-  for (i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 === 0) {
-      isOdd.push(arr[i]);
-    } else {
-      isEven.push(arr[i]);
-    }
-  }
-  console.log(isEven);
-  console.log(isOdd);
-}
+//let points = 0;
+//let resp0 = prompt("What of the capital of Armenia ");
 
-debugger;
-let a = [45, 12, 3, 6, 17, 0];
-console.log(oddEven(a));
-// -------------------------
+//if (resp0 === "Yerevan") {
+//  points = points + 1;
+//}
 
-// 4.
+//let resp1 = prompt("What of the capital of Russia ");
 
-let a = [1, 2, 3, 3, 2, 2, 5, 7, 8, 9, 5];
+//if (resp1 === "Moscow") {
+//  points = points + 1;
+//}
 
-function uniqueArr(arr) {
-  let resArr = [];
+//let resp2 = prompt("What of the capital of France ");
 
-  if (arr.length > 0) {
-    resArr[0] = arr[0];
-  }
+//if (resp2 === "Paris") {
+//  points = points + 1;
+//}
 
-  for (let i = 0; i < arr.length; i++) {
-    let showRes = false;
+//alert(`You resives ${points} out of 3`);
 
-    for (let j = 0; j < arr.length; j++) {
-      if (arr[i] === resArr[j]) {
-        showRes = true;
-        break;
-      } else {
-        showRes = false;
-      }
-    }
+//-------------------
+//  if , if else
 
-    if (showRes === false) {
-      resArr[resArr.length] = arr[i];
-    }
-  }
+//let x = prompt("What is your name?");
+//let z = prompt("What is your surname");
 
-  return resArr;
-}
+//if (x === "Yura") {
+//  if (z === "Avetisyan") {
+//    alert("vay ba barv dzez");
+//  } else {
+//    alert("Yura ba es inch ka chka");
+//  }
+//} else if (x === "Anush") {
+//  alert("barev Anush");
+//} else if (x === "Vazgen") {
+//  alert("Vazgen hi");
+//} else {
+//  alert("ammm");
+//}
 
-//debugger;
+//-------------------
+//  Number and String
 
-console.log(uniqueArr(a));
+//let x = "20";
+//let y = +x;
 
-// 3.
-function removeStr(text, rtext) {
-  return text.split(rtext).join("");
-}
+//if (y === 20) {
+//  alert("ya");
+//}
 
-console.log(removeStr(txt, remWord));
+//-------------------
+//  while
 
-// 4. Given an array of numbers. Create an array containing only unique elements.
+//let i = 0;
 
-// 5. Given a string and symbols. Change first symbol by the second one in the string.
+//while (i < 3) {
+//  alert(i);
+//  i++;
+//}
 
-let txt = prompt("Enter some text");
-let oldT = prompt("Enter old word");
-let newT = prompt("Enter new word");
+//while (true) {
+//  let userResponse = prompt("hi");
+//  if (userResponse === "exit") {
+//    break;
+//  }
+//  alert("OK, we will continue");
+//}
 
-function replaceStr(text, rtext) {
-  for (let i = 0; i < text.length; i++) {
-    if (text[i] === rtext) {
-      return text.replaceAll(oldT, newT);
-    }
-  }
-}
+//-------------------
+//  array
 
-console.log(replaceStr(txt, oldT));
+//let x = [44, 989, 8, 57];
 
-// 2. worked !!!!!   only sinple word
+//x[1] = 9;
+//let y = x[1];
 
-let a = ["inlets", "enlists", "google", "banana"];
-let b = "listen";
+//alert(x.length);
 
-function anagr(arr, findeAnagr) {
-  let array = [];
-  let result = "";
+//let x = [5, "miban", true, false, [5, 8, 99]];
 
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr[i].length; j++) {
-      if (arr[i].length !== findeAnagr.length) {
-        break;
-      }
-      for (let k = 0; k < findeAnagr.length; k++) {
-        if (arr[i][j] === findeAnagr[k]) {
-          result += findeAnagr[k];
-        }
-      }
-    }
-    if (result === arr[i]) {
-      return arr[i];
-    }
-  }
-}
+//console.log(x[4][1]); //8
 
-console.log(anagr(a, b));
+//-------------------
+//  games tic tac toe
 
-//debugger;
-console.log(anagr(a, b));
+//let board = [
+//  [" _ ", " _ ", " _ "],
+//  [" _ ", " _ ", " _ "],
+//  [" _ ", " _ ", " _ "],
+//];
+//let player = "x";
+//while (true) {
+//  let boardStrt =
+//    board[0].join("  ") +
+//    "\n" +
+//    board[1].join("  ") +
+//    "\n" +
+//    board[2].join("  ");
 
-//--- not work ??
-let a = ["applea", "inlets", "enlists", "google", "banana"];
-let b = "listen";
+//  let row = +prompt("enter row" + "\n" + boardStrt);
+//  let column = +prompt("enter column" + "\n\n" + boardStrt);
 
-function anagr(arr, findAnagr) {
-  let array = [];
+//  if (board[row][column] !== "_") {
+//    alert("you lose!!!");
+//    break;
+//  }
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].length !== findAnagr.length) {
-      continue;
-    }
-    let strArr = "";
-    let result = "";
-    strArr += arr[i];
-    for (let j = 0; j < strArr.length; j++) {
-      result += strArr[j];
+//  board[row][column] = player;
 
-      if (result !== findAnagr) {
-        continue;
-      } else {
-        return arr[i];
-      }
-    }
-  }
-}
+//  if (player === "x") {
+//    player = "o";
+//  } else {
+//    player = "x";
+//  }
+//}
 
-debugger;
-console.log(anagr(a, b));
+//let a = ["Hakob", "Poghos", "Petros", "Aramis", "Nika", "Yura"];
 
-// 4 worked!1
+//let i = 0;
+//let i2 = a.length - 1;
 
-let digit = +prompt("Enter digit arry");
-let a = [];
+//while (i < a.length / 2) {
+//  let d = a[i];
+//  a[i] = a[i2];
+//  a[i2] = d;
 
-for (let i = 0; i < digit; i++) {
-  a.push(+prompt("Enter  arrays"));
-}
+//  i++;
 
-function uniqElem(arr) {
-  let result = [];
-  let count = 0;
-  let bool = false;
+//  i2 = i2 - 1;
+//}
 
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < result.length; j++) {
-      if (arr[i] === result[j]) {
-        bool = true;
-      }
-    }
-    count++;
-    if (count == 1 && bool == false) {
-      result.push(arr[i]);
-    }
-    bool = false;
-    count = 0;
-  }
-  return result;
-}
-
-debugger;
-console.log(uniqElem(a));
+//console.log(a);
